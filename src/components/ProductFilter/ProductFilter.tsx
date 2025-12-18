@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -26,7 +26,7 @@ export function ProductFilter({
 }: ProductFilterProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  const { register, handleSubmit, watch, reset, setValue } =
+  const { register, handleSubmit, control, reset, setValue } =
     useForm<FilterValues>({
       defaultValues: {
         ...DEFAULT_FILTER_VALUES,
@@ -34,7 +34,7 @@ export function ProductFilter({
       },
     });
 
-  const formValues = watch();
+  const formValues = useWatch({ control }) as FilterValues;
 
   const handleFilterChange = (data: FilterValues) => {
     onFilterChange(data);

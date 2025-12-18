@@ -12,6 +12,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import { useProductFilter } from "@/hooks/useProductFilter";
+import type { FilterValues } from "@/components/ProductFilter/ProductFilter.types";
 import { SAMPLE_PRODUCTS, CATEGORIES } from "@/data/sampleProducts";
 
 export function ProductInventory() {
@@ -22,7 +23,7 @@ export function ProductInventory() {
   const itemsPerPage = 10;
 
   const handleFilterChangeWrapper = useCallback(
-    (newFilters: any) => {
+    (newFilters: FilterValues) => {
       if (JSON.stringify(newFilters) === JSON.stringify(filters)) {
         return;
       }

@@ -73,7 +73,7 @@ export function MultiSelect({
                                         className="ml-1 ring-offset-background rounded-full outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
                                         onKeyDown={(e) => {
                                             if (e.key === "Enter") {
-                                                handleRemove(value, e as any);
+                                                handleRemove(value, e as unknown as React.MouseEvent);
                                             }
                                         }}
                                         onMouseDown={(e) => {

@@ -33,13 +33,15 @@ export function FilterContent({
   onClearAll,
   hasActiveFilters,
 }: FilterContentProps) {
+  const formValuesKey = JSON.stringify(formValues);
+
   useEffect(() => {
     const timer = setTimeout(() => {
       handleSubmit(onFilterChange)();
     }, 2500);
 
     return () => clearTimeout(timer);
-  }, [JSON.stringify(formValues), handleSubmit, onFilterChange]);
+  }, [formValuesKey, handleSubmit, onFilterChange]);
 
   const categoryOptions = categories.map((cat) => ({
     label: cat,
