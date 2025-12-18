@@ -1,73 +1,79 @@
-# React + TypeScript + Vite
+# Product Filter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern product inventory management interface built with React, TypeScript, Vite, and Tailwind CSS. This application features a responsive inventory table with filtering, pagination, and a clean user interface.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Product Inventory Table**: View and manage product listings.
+- **Advanced Filtering**: Filter products by various criteria (name, category, status, etc.).
+- **Pagination**: Efficiently navigate through large sets of inventory data.
+- **Responsive Design**: Optimized for both desktop and mobile devices.
+- **Modern UI**: Built with Shadcn UI and Tailwind CSS for a premium look and feel.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React + Vite
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: Shadcn UI
+- **Icons**: Lucide React
+- **State/Forms**: React Hook Form
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Prerequisites
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Ensure you have Node.js installed on your machine.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### Installation
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd product-filter-app
+   ```
+
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+## Running the Project
+
+To start the development server:
+
+```bash
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+This will run the app in development mode. Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Building for Production
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+To build the app for production:
+
+```bash
+npm run build
+```
+
+This compiles the TypeScript code and bundles the application using Vite. The output will be in the `dist` directory.
+
+## Preview Production Build
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Linting
+
+To run the linter:
+
+```bash
+npm run lint
 ```
