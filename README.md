@@ -69,11 +69,3 @@ To preview the production build locally:
 ```bash
 npm run preview
 ```
-
-## Linting
-
-To run the linter:
-
-```bash
-npm run lint
-```
